@@ -11,6 +11,7 @@
 	--color1: hsl(46, 100%, 95%);
 	--color2: hsl(231, 16%, 15%);
 	--accentColor: hsl(46,91%,58%);
+	--accentColorTint: hsl(46,91%,48%);
 }
 
 html, body, div, span, applet, object,
@@ -1533,10 +1534,6 @@ input, select, textarea {
 			margin-bottom: 0;
 		}
 
-	header {
-		margin: 0 0 1.5em 0;
-	}
-
 		header > p {
 			margin: 0.5em 0 0 0;
 			color: #aaa;
@@ -2013,6 +2010,7 @@ input, select, textarea {
 					justify-content: center;
 					border-radius: 125px;
 					background-color: var(--color2);
+					margin: auto 0px;
 				}
 
 					#main > .panel.intro .pic:before {
@@ -2078,11 +2076,16 @@ input, select, textarea {
 						width: 3em;
 						padding-right: 0.25em;
 					}
+				
+				#main > .panel.intro >div{
+					width: 55%;
+					display: flex;
+					flex-direction: column
+				}
 
 				#main > .panel.intro header {
-					padding: 3.5em 2.5em;
-					margin-bottom: 0;
-					width: 55%;
+					padding: 0.5em 0em;
+					margin-bottom: auto;
 				}
 
 					#main > .panel.intro header h1 {
@@ -2095,6 +2098,31 @@ input, select, textarea {
 						font-size: 1.25em;
 						margin: 0.25em 0 0 0;
 					}
+
+				#main > .panel.intro >div a {
+					width: 17em
+				}
+
+				#main > .panel.intro >div a:nth-child(2) {
+					margin-bottom: 0.7em
+				}
+
+.btn{
+	background-color: var(--accentColor);
+	color: var(--color2);
+	font-weight: bold;
+	padding: 12px 25px;
+	text-decoration: none;
+	text-align: center;
+}
+
+	.btn:hover{
+		background-color: var(--accentColorTint)
+	}
+
+					
+
+
 
 				@media screen and (max-width: 980px) {
 
