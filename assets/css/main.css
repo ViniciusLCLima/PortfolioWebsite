@@ -1965,7 +1965,7 @@ input, select, textarea {
 			transition: opacity 0.25s ease-in-out;
 			margin-bottom: 0;
 			position: relative;
-			padding: 3.5em 2.5em 2.5em 2.5em;
+			padding: 3.5em 2.5em 2.5em 3.5em;
 			width: 100%;
 		}
 
@@ -1988,7 +1988,6 @@ input, select, textarea {
 				display: -ms-flex;
 				display: flex;
 				padding-top: 2em;
-				justify-content: space-around;
 				-moz-flex-direction: row;
 				-webkit-flex-direction: row;
 				-ms-flex-direction: row;
@@ -2010,7 +2009,7 @@ input, select, textarea {
 					justify-content: center;
 					border-radius: 125px;
 					background-color: var(--color2);
-					margin: auto 0px;
+					margin: auto 2% auto auto;
 				}
 
 					#main > .panel.intro .pic:before {
@@ -2047,7 +2046,7 @@ input, select, textarea {
 						cursor: pointer;
 						right: 0;
 						top: calc(50% - 1.375em);
-						width: 1.75em;
+						width: 0em;
 						height: 2.75em;
 						background: #000;
 						background: rgba(0, 0, 0, 0.75);
@@ -2073,19 +2072,19 @@ input, select, textarea {
 						}
 
 					#main > .panel.intro:has(.pic:hover) .arrow, #main > .panel.intro .arrow:hover {
-						width: 3em;
+						width: 2em;
 						padding-right: 0.25em;
 					}
 				
 				#main > .panel.intro >div{
 					width: 55%;
 					display: flex;
-					flex-direction: column
+					flex-direction: column;
+					justify-content: space-around;
 				}
 
 				#main > .panel.intro header {
 					padding: 0.5em 0em;
-					margin-bottom: auto;
 				}
 
 					#main > .panel.intro header h1 {
@@ -2100,10 +2099,10 @@ input, select, textarea {
 					}
 
 				#main > .panel.intro >div a {
-					width: 17em
+					width: 17em;
 				}
 
-				#main > .panel.intro >div a:nth-child(2) {
+				#main > .panel.intro >div a:nth-child(1) {
 					margin-bottom: 0.7em
 				}
 
@@ -2111,9 +2110,10 @@ input, select, textarea {
 	background-color: var(--accentColor);
 	color: var(--color2);
 	font-weight: bold;
-	padding: 12px 25px;
+	padding: 6px 25px;
 	text-decoration: none;
 	text-align: center;
+	display: block
 }
 
 	.btn:hover{
