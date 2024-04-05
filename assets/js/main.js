@@ -3,6 +3,43 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
+const projects = [
+	{
+		name:"Color Flipper",
+		description:"A page that lets you change its background-color, bringing colors that are harmonious with it to the foreground.",
+		imgPath: "images/projects/color-flipper",
+		liveUrl:"",
+		repositoryUrl:"https://github.com/ViniciusLCLima/Color-Flipper",
+	},
+	{
+		name:"",
+		description:"",
+		imgPath: "",
+		liveUrl:"",
+		repositoryUrl:"",
+	},
+	{
+		name:"",
+		description:"",
+		imgPath: "",
+		liveUrl:"",
+		repositoryUrl:"",
+	},
+	{
+		name:"",
+		description:"",
+		imgPath: "",
+		liveUrl:"",
+		repositoryUrl:"",
+	},
+	{
+		name:"",
+		description:"",
+		imgPath: "",
+		liveUrl:"",
+		repositoryUrl:"",
+	},
+]
 
 (function($) {
 
