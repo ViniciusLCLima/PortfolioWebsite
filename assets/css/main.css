@@ -12,6 +12,8 @@
 	--color2: hsl(231, 16%, 15%);
 	--accentColor: hsl(46,91%,58%);
 	--accentColorTint: hsl(46,91%,48%);
+	--accentColorAttenuated: hsl(46,75%,58%);
+	--accentColorAttenuatedTint: hsl(46,75%,48%)
 }
 
 html, body, div, span, applet, object,
@@ -2103,7 +2105,7 @@ input, select, textarea {
 					width: 17em;
 				}
 
-				#main > .panel.intro >div a:nth-child(1) {
+				#main > .panel.intro >div a.my-work-btn {
 					margin-bottom: 0.7em
 				}
 
@@ -2114,12 +2116,22 @@ input, select, textarea {
 	padding: 6px 25px;
 	text-decoration: none;
 	text-align: center;
-	display: block
+	display: block;
+	transition: background-color .15s;
 }
-
 	.btn:hover{
 		background-color: var(--accentColorTint)
 	}
+
+.btn.linkedin-btn{
+	background-color: var(--accentColorAttenuated)
+}
+
+	.btn.linkedin-btn:hover{
+		background-color: var(--accentColorAttenuatedTint)
+	}
+
+	
 
 					
 
