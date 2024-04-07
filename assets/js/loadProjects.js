@@ -26,32 +26,30 @@ const projects = [
 		liveUrl:"",
 		repositoryUrl:"https://github.com/ViniciusLCLima/Color-Flipper",
 	},
-	{
-		name:"",
-		description:"",
-		imgPath: "",
-		liveUrl:"",
-		repositoryUrl:"",
-	},
-	{
-		name:"",
-		description:"",
-		imgPath: "",
-		liveUrl:"",
-		repositoryUrl:"",
-	},
-	{
-		name:"",
-		description:"",
-		imgPath: "",
-		liveUrl:"",
-		repositoryUrl:"",
-	},
-	{
-		name:"",
-		description:"",
-		imgPath: "",
-		liveUrl:"",
-		repositoryUrl:"",
-	},
 ]
+
+const createProjectDiv = (name, description, liveUrl, repoUrl)=>{
+    const containerDiv = document.createElement('div')
+    containerDiv.classList.add("col-4", "col-6-medium", "col-12-small")
+    const aElem = document.createElement('a')
+    aElem.classList.add("image", "fit")
+    aElem.setAttribute('href', liveUrl)
+    const imgElem = document.createElement('img')
+    imgElem.setAttribute("src", `images/${name}.jpg`)
+    imgElem.setAttribute("alt", `Screenshot of the project ${name} live.`)
+    aElem.appendChild(imgElem)
+    containerDiv.appendChild(aElem)
+    const titleElem = document.createElement('h3')
+    titleElem.textContent = name
+    containerDiv.appendChild(titleElem)
+    const p = document.createElement('p')
+    p.textContent = description
+    containerDiv.appendChild(p)
+    return containerDiv
+}
+
+document.querySelector('section .row').appendChild(createProjectDiv('Color-Flipper', await getRepositoryDescription(projects[0].repositoryUrl), projects[0].liveUrl, projects[0].repositoryUrl))
+
+// projects.forEach(projData=>{
+//     createProjectDiv(projName, description, projData.liveUrl,projData.repoUrl)
+// })
