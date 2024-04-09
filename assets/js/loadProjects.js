@@ -4,28 +4,32 @@ import { authCode } from "./auth.js"
 const authObj = new Octokit ({
     auth: authCode
 })
+const MY_GIT_HUB_USERNAME = "ViniciusLCLima"
+const MY_GIT_HUB_URL = `https://github.com/${MY_GIT_HUB_USERNAME}/`
 
-const gitHubUsername = 'ViniciusLCLima'
-
-const getRepositoryDescription = async (repoUrl)=>{
+const getProjLiveUrlAndDescr = async (repoUrl)=>{
     const splittedUrl = repoUrl.split("/")
     const repoName = splittedUrl[splittedUrl.length-1]
-	const response = await authObj.request(`GET /repos/${gitHubUsername}/${repoName}`,{
-		owner: gitHubUsername,
+	const response = await authObj.request(`GET /repos/${MY_GIT_HUB_USERNAME}/${repoName}`,{
+		owner: MY_GIT_HUB_USERNAME,
 		name: repoName,
 		headers: {
 			'X-GitHub-Api-Version': '2022-11-28'
 		}
 	})
-	return response.data.description;
+	return {
+        DESCR: response.data.description,
+        LIVE_URL: response.data.description
+    };
 }
 
 const projects = [
 	{
-		imgPath: "images/projects/color-flipper",
-		liveUrl:"",
-		repositoryUrl:"https://github.com/ViniciusLCLima/Color-Flipper",
+		name: "Color Flipper",
 	},
+    {
+        name: "Dad Jokes App"
+	}
 ]
 
 const createProjectDiv = (name, description, liveUrl, repoUrl)=>{
@@ -47,9 +51,10 @@ const createProjectDiv = (name, description, liveUrl, repoUrl)=>{
     containerDiv.appendChild(p)
     return containerDiv
 }
-
-document.querySelector('section .row').appendChild(createProjectDiv('Color-Flipper', await getRepositoryDescription(projects[0].repositoryUrl), projects[0].liveUrl, projects[0].repositoryUrl))
-
-// projects.forEach(projData=>{
-//     createProjectDiv(projName, description, projData.liveUrl,projData.repoUrl)
-// })
+const projectsContainer = document.querySelector("#work>section>.row")
+projects.forEach(projData=>{
+    const PROJ_REPO_URL = MY_GIT_HUB_URL + projData.name.replaceAll(" ", "-")
+    getProjLiveUrlAndDescr(PROJ_REPO_URL).then(({DESCR, LIVE_URL})=>{
+        projectsContainer.appendChild(createProjectDiv(projData.name, DESCR, LIVE_URL, PROJ_REPO_URL))
+    })
+})
