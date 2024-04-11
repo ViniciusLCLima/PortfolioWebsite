@@ -2123,11 +2123,11 @@ input, select, textarea {
 		background-color: var(--accentColorTint)
 	}
 
-.btn.linkedin-btn{
+.btn.secondary{
 	background-color: var(--accentColorAttenuated)
 }
 
-	.btn.linkedin-btn:hover{
+	.btn.secondary:hover{
 		background-color: var(--accentColorAttenuatedTint)
 	}
 

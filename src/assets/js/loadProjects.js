@@ -1,5 +1,6 @@
 import { Octokit } from "https://esm.sh/@octokit/core";
 import { authCode } from "./auth.js"
+import clone from 'just-clone'
 
 const authObj = new Octokit ({
     auth: authCode
@@ -19,7 +20,7 @@ const getProjLiveUrlAndDescr = async (repoUrl)=>{
 	})
 	return {
         DESCR: response.data.description,
-        LIVE_URL: response.data.description
+        LIVE_URL: response.data.homepage
     };
 }
 
@@ -34,7 +35,7 @@ const projects = [
 
 const createProjectDiv = (name, description, liveUrl, repoUrl)=>{
     const containerDiv = document.createElement('div')
-    containerDiv.classList.add("col-4", "col-6-medium", "col-12-small")
+    containerDiv.classList.add("col-4", "col-6-medium", "col-12-small project-card")
     const aElem = document.createElement('a')
     aElem.classList.add("image", "fit")
     aElem.setAttribute('href', liveUrl)
@@ -49,6 +50,17 @@ const createProjectDiv = (name, description, liveUrl, repoUrl)=>{
     const p = document.createElement('p')
     p.textContent = description
     containerDiv.appendChild(p)
+    const btnsDiv = document.createElement('div')
+    btnsDiv.classList.add('btns-div')
+    containerDiv.appendChild(btnsDiv)
+    const liveUrlBtn = document.createElement('a')
+    liveUrlBtn.classList.add('btn')
+    liveUrlBtn.setAttribute('href', liveUrl)
+    const repoBtn = clone(liveUrlBtn)
+    btnsDiv.appendChild(liveUrlBtn, repoBtn)
+    liveUrl.textContent = "See live"
+    repoBtn.textContent = "GitHub"
+    repoBtn.classList.add('Secondary')
     return containerDiv
 }
 const projectsContainer = document.querySelector("#work>section>.row")
