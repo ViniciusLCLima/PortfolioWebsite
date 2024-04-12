@@ -1,4 +1,4 @@
-import { Octokit } from "https://esm.sh/@octokit/core";
+import { Octokit } from "@Octokit/core";
 import { authCode } from "./auth.js"
 import clone from 'just-clone'
 
@@ -35,12 +35,12 @@ const projects = [
 
 const createProjectDiv = (name, description, liveUrl, repoUrl)=>{
     const containerDiv = document.createElement('div')
-    containerDiv.classList.add("col-4", "col-6-medium", "col-12-small project-card")
+    containerDiv.classList.add("col-4", "col-6-medium", "col-12-small", "project-card")
     const aElem = document.createElement('a')
     aElem.classList.add("image", "fit")
     aElem.setAttribute('href', liveUrl)
     const imgElem = document.createElement('img')
-    imgElem.setAttribute("src", `images/${name}.jpg`)
+    imgElem.setAttribute("src", `images/projects/${name}.jpg`)
     imgElem.setAttribute("alt", `Screenshot of the project ${name} live.`)
     aElem.appendChild(imgElem)
     containerDiv.appendChild(aElem)
@@ -63,10 +63,15 @@ const createProjectDiv = (name, description, liveUrl, repoUrl)=>{
     repoBtn.classList.add('Secondary')
     return containerDiv
 }
-const projectsContainer = document.querySelector("#work>section>.row")
-projects.forEach(projData=>{
-    const PROJ_REPO_URL = MY_GIT_HUB_URL + projData.name.replaceAll(" ", "-")
-    getProjLiveUrlAndDescr(PROJ_REPO_URL).then(({DESCR, LIVE_URL})=>{
-        projectsContainer.appendChild(createProjectDiv(projData.name, DESCR, LIVE_URL, PROJ_REPO_URL))
+
+const loadProjects = () => {
+    const projectsContainer = document.querySelector("#work>section>.row")
+    projects.forEach(projData=>{
+        const PROJ_REPO_URL = MY_GIT_HUB_URL + projData.name.replaceAll(" ", "-")
+        getProjLiveUrlAndDescr(PROJ_REPO_URL).then(({DESCR, LIVE_URL})=>{
+            projectsContainer.appendChild(createProjectDiv(projData.name, DESCR, LIVE_URL, PROJ_REPO_URL))
+        })
     })
-})
+}
+
+export default loadProjects;
