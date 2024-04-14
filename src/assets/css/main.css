@@ -2131,7 +2131,20 @@ input, select, textarea {
 		background-color: var(--accentColorAttenuatedTint)
 	}
 
-	
+.row .project-card .btns-div {
+	text-align: center;
+}
+	.row .project-card .btn {
+		width: 45%;
+		display: inline-block;
+	}
+		.row .project-card .btn:nth-child(1){
+			margin-right:8%
+		}
+			.row .project-card .btn.secondary img{
+				width: 1em;
+				height: 1em
+			}
 
 					
 
