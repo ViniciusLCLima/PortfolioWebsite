@@ -2134,6 +2134,9 @@ input, select, textarea {
 .row .project-card .btns-div {
 	text-align: center;
 }
+.row .project-card>p{
+	margin-bottom:1.1em
+}
 	.row .project-card .btn {
 		width: 45%;
 		display: inline-flex;

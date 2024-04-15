@@ -30,8 +30,19 @@ const projects = [
 	},
     {
         name: "Dad Jokes App"
-	}
+	},
+    {
+        name: "Silvestrini Website"
+	},
+    {
+        name: "ToDo List"
+	},
+    {
+        name: "Lights Out Game"
+	},
 ]
+projects.reverse()
+
 const LIVE_URL_BTN_TXT_STR = "Live"
 const REPO_BTN_TXT_STR = "GitHub"
 
