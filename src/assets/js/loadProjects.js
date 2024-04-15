@@ -69,6 +69,7 @@ const createProjectDiv = (name, description, liveUrl, repoUrl)=>{
     const liveUrlBtn = document.createElement('a')
     liveUrlBtn.classList.add('btn')
     liveUrlBtn.setAttribute('href', liveUrl)
+    liveUrlBtn.setAttribute('target', '_blank')
     const repoBtn = liveUrlBtn.cloneNode()
     const gitHubImg = document.createElement('img')
     gitHubImg.setAttribute('src', `${IMGS_DIR_PATH}github-mark.png`)
