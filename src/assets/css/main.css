@@ -2136,14 +2136,19 @@ input, select, textarea {
 }
 	.row .project-card .btn {
 		width: 45%;
-		display: inline-block;
+		display: inline-flex;
+		padding: 6px 10px;
+		justify-content: center;
+		align-items: center;
 	}
 		.row .project-card .btn:nth-child(1){
 			margin-right:8%
 		}
 			.row .project-card .btn.secondary img{
 				width: 1em;
-				height: 1em
+				height: 1em;
+				margin-right: 0.2em;
+				vertical-align: middle;
 			}
 
 					
