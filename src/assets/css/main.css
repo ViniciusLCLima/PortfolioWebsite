@@ -2131,29 +2131,36 @@ input, select, textarea {
 		background-color: var(--accentColorAttenuatedTint)
 	}
 
-.row .project-card .btns-div {
-	text-align: center;
+
+.row .project-card{
+	margin-bottom:1.8em;
 }
-.row .project-card>p{
-	margin-bottom:1.1em;
-	height: 10.5em
-}
-	.row .project-card .btn {
-		width: 45%;
-		display: inline-flex;
-		padding: 6px 10px;
+
+	.row .project-card .btns-div {
+		text-align: center;
+		display: flex;
 		justify-content: center;
-		align-items: center;
 	}
-		.row .project-card .btn:nth-child(1){
-			margin-right:8%
+	.row .project-card>p{
+		margin-bottom:0.7em;
+		height: 10.5em
+	}
+		.row .project-card .btn {
+			width: 45%;
+			display: inline-flex;
+			padding: 6px 10px;
+			justify-content: center;
+			align-items: center;
 		}
-			.row .project-card .btn.secondary img{
-				width: 1em;
-				height: 1em;
-				margin-right: 0.2em;
-				vertical-align: middle;
+			.row .project-card .btn:nth-child(1){
+				margin-right:8%
 			}
+				.row .project-card .btn.secondary img{
+					width: 1em;
+					height: 1em;
+					margin-right: 0.2em;
+					vertical-align: middle;
+				}
 
 					
 
