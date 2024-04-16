@@ -2135,7 +2135,8 @@ input, select, textarea {
 	text-align: center;
 }
 .row .project-card>p{
-	margin-bottom:1.1em
+	margin-bottom:1.1em;
+	height: 10.5em
 }
 	.row .project-card .btn {
 		width: 45%;
