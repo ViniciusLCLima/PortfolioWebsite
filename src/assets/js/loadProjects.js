@@ -19,8 +19,8 @@ const getProjLiveUrlAndDescr = async (repoUrl)=>{
 		}
 	})
 	return {
-        DESCR: response.data.description,
-        LIVE_URL: response.data.homepage
+        descr: response.data.description,
+        liveUrl: response.data.homepage
     };
 }
 
@@ -89,8 +89,11 @@ const loadProjects = () => {
     const projectsContainer = document.querySelector("#work>section>.row")
     projects.forEach(projData=>{
         const PROJ_REPO_URL = MY_GIT_HUB_URL + projData.name.replaceAll(" ", "-")
-        getProjLiveUrlAndDescr(PROJ_REPO_URL).then(({DESCR, LIVE_URL})=>{
-            projectsContainer.appendChild(createProjectDiv(projData.name, DESCR, LIVE_URL, PROJ_REPO_URL))
+        getProjLiveUrlAndDescr(PROJ_REPO_URL).then(({descr, liveUrl})=>{
+            if (descr.length>173) {
+                descr = descr.substring(0,173) + "..."
+            }
+            projectsContainer.appendChild(createProjectDiv(projData.name, descr, liveUrl, PROJ_REPO_URL))
         })
     })
 }
