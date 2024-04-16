@@ -152,7 +152,7 @@ input, select, textarea {
 		}
 
 		.row > .col-4 {
-			width: 33.33333%;
+			width: 50.0%;
 		}
 
 		.row > .off-4 {
@@ -2141,7 +2141,7 @@ input, select, textarea {
 	}
 	.row .project-card>p{
 		margin-bottom:0.7em;
-		height: 10.5em
+		height: 7em
 	}
 		.row .project-card .btn {
 			width: 45%;
