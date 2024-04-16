@@ -98,6 +98,4 @@ const loadProjects = () => {
     })
 }
 
-This React app is a game called Lights Out. The goal is to turn off all lights of a board. Beware though as when you toggle one light, lights around will also toggle.abcds aa.
-
 export default loadProjects;
