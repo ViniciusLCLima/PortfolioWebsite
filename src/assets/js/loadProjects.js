@@ -97,5 +97,5 @@ const loadProjects = () => {
         })
     })
 }
-
+console.log("hi")
 export default loadProjects;

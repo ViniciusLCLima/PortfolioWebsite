@@ -25,16 +25,16 @@
   },
   "homepage": "https://github.com/ViniciusLCLima/PortfolioWebsite#readme",
   "dependencies": {
-    "@octokit/core": "^6.1.1",
-    "just-clone": "^6.2.0"
+    "@octokit/core": "^6.1.1"
   },
   "devDependencies": {
     "css-loader": "^7.1.1",
+    "html-loader": "5.0.0",
     "html-webpack-plugin": "^5.6.0",
     "style-loader": "^4.0.0",
     "webpack": "^5.91.0",
-    "webpack-dev-server": "10.1.0",
     "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "5.0.4",
     "webpack-merge": "^5.10.0"
   }
 }
