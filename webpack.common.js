@@ -16,26 +16,17 @@ module.exports = {
                 use: ["style-loader", "css-loader"],
             },
             {
-                test: /\.(jpg|gif|png|svg)$/i,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'imgs/[name].[hash].[ext]'
-                }
-            },
-            {
-                test: /\.html$/,
-                type: 'asset/resource',
+                test: /\.(png|jpg)$/,
+                type: "asset/resource",
                 generator: {
                     filename: '[name].[hash].[ext]'
                 }
-            },
-            {
-                test: /\.js$/,
-                type: 'asset/resource',
-                generator: {
-                    filename: 'js/[name].[hash].[ext]'
-                }
             }
+            ,
+            {
+                test: /\.html$/,
+                use: ['html-loader']
+            },
         ]
     }
 }

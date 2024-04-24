@@ -1,5 +1,13 @@
 import { Octokit } from "@Octokit/core";
-import { authCode } from "./auth.js"
+import { authCode } from "./auth.js";
+import colorFlipperImg from '../../images/projects/Color Flipper.jpg';
+import lightsOutGameImg from '../../images/projects/Lights Out Game.jpg';
+import dadJokesAppImg from '../../images/projects/Dad Jokes App.jpg';
+import silvestriniSiteImg from '../../images/projects/Silvestrini Website.jpg';
+import toDoListImg from '../../images/projects/ToDo List.jpg';
+import gitHubIconImg from '../../images/github-mark.png';
+
+
 
 const authObj = new Octokit ({
     auth: authCode
@@ -25,20 +33,26 @@ const getProjLiveUrlAndDescr = async (repoUrl)=>{
 }
 
 const projects = [
-	{
+    
+	{        
 		name: "Color Flipper",
+        img: colorFlipperImg
 	},
     {
-        name: "Dad Jokes App"
+        name: "Dad Jokes App",
+        img: dadJokesAppImg,
 	},
     {
-        name: "Silvestrini Website"
+        name: "Silvestrini Website",
+        img: silvestriniSiteImg
 	},
     {
-        name: "ToDo List"
+        name: "ToDo List",
+        img: toDoListImg
 	},
     {
-        name: "Lights Out Game"
+        name: "Lights Out Game",
+        img: lightsOutGameImg
 	},
 ]
 projects.reverse()
@@ -46,14 +60,14 @@ projects.reverse()
 const LIVE_URL_BTN_TXT_STR = "Live"
 const REPO_BTN_TXT_STR = "GitHub"
 
-const createProjectDiv = (name, description, liveUrl, repoUrl)=>{
+const createProjectDiv = (name, description, liveUrl, repoUrl, projectImg)=>{
     const containerDiv = document.createElement('div')
     containerDiv.classList.add("col-4", "col-6-medium", "col-12-small", "project-card")
     const aElem = document.createElement('a')
     aElem.classList.add("image", "fit")
     aElem.setAttribute('href', liveUrl)
     const imgElem = document.createElement('img')
-    imgElem.setAttribute("src", `${IMGS_DIR_PATH}projects/${name}.jpg`)
+    imgElem.setAttribute("src", projectImg)
     imgElem.setAttribute("alt", `Screenshot of the project ${name} live.`)
     aElem.appendChild(imgElem)
     containerDiv.appendChild(aElem)
@@ -72,7 +86,7 @@ const createProjectDiv = (name, description, liveUrl, repoUrl)=>{
     liveUrlBtn.setAttribute('target', '_blank')
     const repoBtn = liveUrlBtn.cloneNode()
     const gitHubImg = document.createElement('img')
-    gitHubImg.setAttribute('src', `${IMGS_DIR_PATH}github-mark.png`)
+    gitHubImg.setAttribute('src', gitHubIconImg)
     gitHubImg.setAttribute('alt', "Git hub's inverted cat logo")
     repoBtn.appendChild(gitHubImg)
     btnsDiv.appendChild(liveUrlBtn)
@@ -93,7 +107,7 @@ const loadProjects = () => {
             if (descr.length>173) {
                 descr = descr.substring(0,173) + "..."
             }
-            projectsContainer.appendChild(createProjectDiv(projData.name, descr, liveUrl, PROJ_REPO_URL))
+            projectsContainer.appendChild(createProjectDiv(projData.name, descr, liveUrl, PROJ_REPO_URL, projData.img))
         })
     })
 }
