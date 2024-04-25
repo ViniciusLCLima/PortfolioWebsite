@@ -8,13 +8,11 @@ import toDoListImg from '../../images/projects/ToDo List.jpg';
 import gitHubIconImg from '../../images/github-mark.png';
 
 
-
 const authObj = new Octokit ({
     auth: authCode
 })
 const MY_GIT_HUB_USERNAME = "ViniciusLCLima"
 const MY_GIT_HUB_URL = `https://github.com/${MY_GIT_HUB_USERNAME}/`
-const IMGS_DIR_PATH = 'src/images/'
 
 const getProjLiveUrlAndDescr = async (repoUrl)=>{
     const splittedUrl = repoUrl.split("/")

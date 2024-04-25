@@ -1,7 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const cssFolderPath = './src/assets/css/'
 
 module.exports = {
-    entry: "./src/index.js",
+    entry: ["./src/index.js",`${cssFolderPath}fontawesome-all.min.css`,`${cssFolderPath}noscript.css`],
     plugins: [
         new HtmlWebpackPlugin(
             {
@@ -19,9 +20,9 @@ module.exports = {
                 test: /\.(png|jpg)$/,
                 type: "asset/resource",
                 generator: {
-                    filename: '[name].[hash].[ext]'
+                    filename: 'imgs/[name].[hash][ext]'
                 }
-            }
+            },
             ,
             {
                 test: /\.html$/,
