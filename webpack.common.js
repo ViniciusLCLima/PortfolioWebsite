@@ -1,20 +1,23 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const cssFolderPath = './src/assets/css/'
+const miniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
-    entry: ["./src/index.js",`${cssFolderPath}fontawesome-all.min.css`,`${cssFolderPath}noscript.css`],
+    entry: [`${cssFolderPath}main.css`,"./src/index.js"],
     plugins: [
         new HtmlWebpackPlugin(
             {
                 template: "src/template.html",
+                inject: "body",
+                scriptLoading: "blocking"
             }
             )
-        ],
+        , new miniCssExtractPlugin()],
     module:{
         rules:[
             {
-                test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                test: /\.css$/,
+                use: [miniCssExtractPlugin.loader, "css-loader"],
             },
             {
                 test: /\.(png|jpg)$/,

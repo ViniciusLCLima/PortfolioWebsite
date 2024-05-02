@@ -4,6 +4,7 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+
 (function($) {
 
 	var $window = $(window),
@@ -12,6 +13,7 @@
 		$main = $('#main'),
 		$panels = $main.children('.panel'),
 		$nav = $('#nav'), $nav_links = $nav.children('a');
+		
 
 	// Breakpoints.
 		breakpoints({
@@ -182,6 +184,7 @@
 
 						if (h < wh)
 							$wrapper.css('height', '100vh');
+							$wrapper.css('background-color','white')
 
 					}, 0);
 

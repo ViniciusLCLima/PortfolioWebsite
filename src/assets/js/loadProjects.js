@@ -7,7 +7,6 @@ import silvestriniSiteImg from '../../images/projects/Silvestrini Website.jpg';
 import toDoListImg from '../../images/projects/ToDo List.jpg';
 import gitHubIconImg from '../../images/github-mark.png';
 
-
 const authObj = new Octokit ({
     auth: authCode
 })
@@ -109,5 +108,4 @@ const loadProjects = () => {
         })
     })
 }
-console.log("hi")
 export default loadProjects;
