@@ -1,5 +1,4 @@
 import { Octokit } from "@Octokit/core";
-import { authCode } from "./auth.js";
 import colorFlipperImg from '../../images/projects/Color Flipper.jpg';
 import lightsOutGameImg from '../../images/projects/Lights Out Game.jpg';
 import dadJokesAppImg from '../../images/projects/Dad Jokes App.jpg';
@@ -7,9 +6,7 @@ import silvestriniSiteImg from '../../images/projects/Silvestrini Website.jpg';
 import toDoListImg from '../../images/projects/ToDo List.jpg';
 import gitHubIconImg from '../../images/github-mark.png';
 
-const authObj = new Octokit ({
-    auth: authCode
-})
+const authObj = new Octokit ()
 const MY_GIT_HUB_USERNAME = "ViniciusLCLima"
 const MY_GIT_HUB_URL = `https://github.com/${MY_GIT_HUB_USERNAME}/`
 
