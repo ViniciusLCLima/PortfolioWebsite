@@ -4,6 +4,10 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
+import './jquery.min.js'
+import browser from './browser.min.js'
+import breakpoints from './breakpoints.min.js'
+import './util.js'
 
 (function($) {
 
@@ -161,7 +165,7 @@
 									$window.triggerHandler('--refresh');
 
 								// Unlock.
-									locked = false;
+									globalThis.locked = false;
 
 							}, (breakpoints.active('small') ? 0 : 500));
 

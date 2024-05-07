@@ -25,10 +25,12 @@
   },
   "homepage": "https://github.com/ViniciusLCLima/PortfolioWebsite#readme",
   "dependencies": {
-    "@octokit/core": "^6.1.1"
+    "@octokit/core": "^6.1.1",
+    "jquery": "^3.7.1"
   },
   "devDependencies": {
     "css-loader": "^7.1.1",
+    "expose-loader": "^5.0.0",
     "html-loader": "5.0.0",
     "html-webpack-plugin": "^5.6.0",
     "mini-css-extract-plugin": "^2.9.0",

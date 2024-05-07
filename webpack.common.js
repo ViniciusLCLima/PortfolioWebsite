@@ -1,9 +1,17 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const cssFolderPath = './src/assets/css/'
+const jsFolderPath = './src/assets/js/'
 const miniCssExtractPlugin = require('mini-css-extract-plugin')
+const webpack = require('webpack')
 
 module.exports = {
-    entry: [`${cssFolderPath}main.css`,"./src/index.js"],
+    entry: [
+        `${cssFolderPath}main.css`,
+        'jquery',
+        `${jsFolderPath}main.js`,
+        "./src/index.js"
+    ],
+
     plugins: [
         new HtmlWebpackPlugin(
             {
@@ -15,6 +23,14 @@ module.exports = {
         , new miniCssExtractPlugin()],
     module:{
         rules:[
+            {
+                test: require.resolve('jquery'),
+                loader: "expose-loader",
+                options: {
+                    exposes: ["$", "jQuery"]
+                }
+                
+            },
             {
                 test: /\.css$/,
                 use: [miniCssExtractPlugin.loader, "css-loader"],
